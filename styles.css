@@ -1,0 +1,100 @@
+*, *::after, *::before { 
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 20px 0 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background-image: url("images/table.jpg");
+    background-size: contain;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+section {
+    margin: 0;
+    display: grid;
+    grid-template: repeat(2, 15em) / repeat(6, 10em);
+    grid-auto-flow: row;
+    gap: .5rem;
+    justify-content: center;
+    padding-top: 1rem;
+    user-select: none;
+}
+
+.deck {
+    height: 15em;
+    width: 10em;
+    border: 1px solid black;
+    border-radius: .5rem;
+    background-image: url("images/cardBack.png");
+    background-size: 160%;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 1rem;
+}
+
+.card::before {
+    top: .5rem;
+    left: .5rem;
+}
+
+.card::after {
+    bottom: .5rem;
+    right: .5rem;
+    transform: rotate(180deg);
+}
+
+#startButton {
+    color: #016f32;
+    width: 6%;
+    background: goldenrod;
+    font-weight: bold;
+    padding: 5px 0 5px;
+    border: none;
+    border-radius: 2px;
+    margin: 2px 0 2px;
+}
+
+#drawButton {
+    color: #016f32;
+    width: 6%;
+    background: goldenrod;
+    font-weight: bold;
+    padding: 5px 0 5px;
+    border: none;
+    border-radius: 2px;
+    margin: 2px 0 2px;
+}
+
